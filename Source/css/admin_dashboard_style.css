@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --main-color: #18dcff;
+    --red: #ff3838;
+    --orange: #ff9f1a;
+    --white: #ffffff;
+    --black: #000;
+    --light-color: #f7f7f7;
+    --light-background: rgba(211, 211, 211, 0.604);
+    --border: 1px solid #656565;
+}
+
+*{
+    font-family: 'Golos Text', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: 2px solid #000000;
+}
+
+*::selection{
+    background-color: var(--main-color);
+    color: #ffffff;
+}
+
+*::-webkit-scrollbar{
+    width: 16px;
+    height: 8;
+}
+
+*::-webkit-scrollbar-track{
+background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+html{
+    font-size: 10px;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--light-background);
+    padding-left: 350px;
+}
+/* When the body section is active set the padding to 0 */
+body.active{
+    padding: 0;
+}
+
+section{
+    padding: 30px;
+    max-width: 32cm;
+    margin: 0 auto;
+}
+
+/* STYLING HEADER SECTION HERE */
+.header{
+    background-color: var(--light-color);
+    border-bottom: var(--border);
+    position: sticky;
+    z-index: 1000;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.header .flex{
+     padding: 20px 16px;
+     display: flex;
+     align-items: center;
+     position: relative;
+     justify-content: space-between;
+}
+
+.header .flex .logo{
+    font-size: 40px;
+    color: var(--black);
+    font-weight: bolder;
+}
+
+.header .flex .search-bar{
+    background-color: var(--light-background);
+    display: flex;
+    border-radius: 8px;
+    padding: 20px 32px;
+    align-items: center;
+    width: 800px;
+    gap: 24px;
+}
+
+.header .flex .search-bar input{
+    background: none;
+    color: var(--black);
+    font-size: 28px;
+    width: 100%;
+}
+
+.header .flex .search-bar button{
+    background:none;
+    color: var(--black);
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.header .flex .search-bar button:hover{
+    color: var(--main-color);
+}
+
+.header .flex .symbols div{
+    color: var(--black);
+    cursor: pointer;
+    background-color: var(--light-background);
+    text-align: center;
+    font-size: 16px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 8px;
+    margin-left: 4px;  
+}
+
+.header .flex .symbols div:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+#search-button {
+    display: none;
+}
+
+/* STYLING HEADER SECTION FOR THE PROFILE HERE */
+.user-profile{
+    transform: scale(0);
+    transform-origin: top right;
+    transition: .2s linear;
+    position: absolute;
+    background-color: var(--white);
+    text-align: center;
+    top: 130%;
+    padding: 30px;
+    width: 300px;
+    left: 85%;
+    border-radius:60px;
+}
+.user-profile.active{
+    transform: scale(1);
+} 
+
+.user-profile img{
+    height: 140px;
+    object-fit: cover;
+    margin-bottom: 8px;
+    width: 100px; 
+    border-radius: 30px;
+}
+
+.user-profile h2 {
+    font-size: 32px;
+    color: var(--black);
+}
+
+.user-profile span{
+    color: var(--black);
+    font-size: 20px;
+}
+
+/* CUSTOMISING THE BUTTONS */
+.profile-button{
+    display: block;
+    color: var(--white);
+    background-color: var(--main-color);
+    cursor: pointer;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 8px;
+    padding: 16px 48px;
+    width: 100%;
+    text-transform: uppercase;
+    margin-top: 16px;
+}
+.user-button{
+    display: block;
+    color: var(--white);
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 8px;
+    width: 50%;
+    text-transform: uppercase;
+    margin-top: 16px;
+    display: flex;
+    gap: 25px;
+}
+.sign-button {
+    display: block;
+    color: var(--white);
+    background-color: var(--red);
+    cursor: pointer;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 20px;
+    padding: 18px 20px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.profile-button:hover,
+.sign-button:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* *CUSTOMISING DASHBOARD OPTION  */
+
+
+
+.dashboard-options{
+    background-color: var(--white);
+    border-right: var(--border);
+    position: fixed;
+    width: 350px;
+    height: 1300px;
+    top: 0;
+    left: 0;
+    transition: .4s ease-out;
+    z-index: 1000;
+}
+
+/* CUSTOMISING USER PROFILE IN DASHBOARD OPTIONS */
+ 
+.dashboard-options .user-profile1{
+    padding: 48px 36px;
+    text-align: center;
+}
+
+.dashboard-options .user-profile1 img{
+    border-radius: 60%;
+    object-fit: fill;
+    margin-bottom: 8px;
+    height: 150px;
+    width: 150px;
+}
+
+.dashboard-options .user-profile1 h2{
+    font-size: 32px;
+    color: var(--black);
+}
+
+.dashboard-options .user-profile1 span{
+    color: var(--red);
+    font-size: 20px;
+}
+
+/* CUSTOMISING DASHBOARD CHOOSES FOR THE USER  */
+
+.dashboard-options .options a{
+    display: block;
+    padding: 30px;
+    font-size: 20px;
+    margin: 1px 0;
+}
+
+.dashboard-options .options a i{
+    font-size: 30px;
+    transition: .3s ease-in;
+    color: var(--main-color);
+    margin-right: 46px;
+}
+
+.dashboard-options .options a span{
+    columns: var(--light-color);
+}
+
+.dashboard-options .options a:hover{
+    background-color: var(--light-background);
+}
+
+.dashboard-options .options a:hover i{
+    margin-right: 40px;
+}
+
+/* When the dashboard options page is active */
+.dashboard-options.active{
+    left: -500px;
+}
+
+
+
+/* CUSTOMISING THE FOOTER SECTION */
+
+.footer{
+    background-color: var(--white);
+    border-top: var(--border);
+    color: var(--black);
+    text-align: center;
+    position: sticky;
+    font-size: 20px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 42px 32px;
+    margin-top: 1000px;
+    z-index:  999;
+}
+
+.footer span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+/* CHANGE TO DIFFERENT MEDIAS */
+
+    @media (max-width: 1143px) {
+        body{
+            padding-left: 0;
+        }
+        .dashboard-options{
+            left: -500px;
+        }
+        .dashboard-options.active{
+            left: 0;
+        }
+    }
+    @media (max-width: 850px) {
+         
+        .header .flex .search-bar{
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            border-top: var(--border);
+            background-color: var(--white);
+            position:absolute;
+            width: auto;
+            left: 0;
+            right: 0;
+            top: 99%;
+            transition: .5s linear;
+        }
+        #search-button{
+            display: inline-block;
+        }
+        .header .flex .search-bar.active{
+            clip-path: polygon(0 0, 100% 0, 100% 100% , 0 100%);
+        }
+    
+
+    @media (max-width: 460px) {
+        html{
+            font-size: 50%;
+        }
+    }
+}
+    

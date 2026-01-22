@@ -1,0 +1,82 @@
+:root{
+    --main-color: #18dcff;
+    --red: #ff3838;
+    --orange: #ff9f1a;
+    --white: #ffffff;
+    --black: #000;
+    --green: #26ff47;
+    --main-color1: #00d0f5;
+    --light-color: #f7f7f7;
+    --light-background: rgba(211, 211, 211, 0.604);
+    --border: 1px solid #656565;
+}
+/* Customising register form here */
+
+.register-form{
+    background: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 750px;
+    padding: 24px;
+    padding-bottom: 58px;
+}
+
+.register-form form{
+    background: var(--light-color);
+    text-align: center;
+    padding: 24px;
+    border-radius: 10px;
+    width: 650px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+.register-form form h1{
+    color: var(--main-color);
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.register-form form input{
+    background: var(--white);
+    margin: 6px 0;
+    font-size: 16px;
+    width: 100%;
+    padding: 12px 5px;
+}
+
+.register-form form select{
+    background: var(--white);
+    margin: 6px 0;
+    font-size: 16px;
+    width: 100%;
+    padding: 12px 5px;
+}
+
+.register-form form select option{
+    background: var(--white);
+}
+
+.register-form form .register-button{
+    background: var(--main-color);
+    color: var(--white);
+    font-size: 24px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.register-form form .register-button:hover{
+    background: var(--main-color1);
+    color: var(--white);
+}
+
+.register-form form p{
+    font-size: 18px;
+    color: var(--black);
+    margin-top: 12px;
+}
+
+.register-form form p a{
+    color: var(--main-color1);
+}

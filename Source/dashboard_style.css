@@ -1,0 +1,1366 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --main-color: #18dcff;
+    --main-color1: rgb(24, 143, 255);
+    --red: #ff3838;
+    --orange: #ff9f1a;
+    --white: #ffffff;
+    --black: #000;
+    --light-color: #f7f7f7;
+    --light-background: rgba(211, 211, 211, 0.604);
+    --border: 1px solid #656565;
+    --light-gray: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --font-main: 'Segoe UI', Arial, sans-serif;
+    --font-secondary: 'Georgia', serif;
+}
+
+*{
+    font-family: 'Golos Text', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: 2px solid #000000;
+}
+
+*::selection{
+    background-color: var(--main-color);
+    color: #ffffff;
+}
+
+*::-webkit-scrollbar{
+    width: 16px;
+    height: 8;
+}
+
+*::-webkit-scrollbar-track{
+background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 8px;
+}
+
+html{
+    font-size: 10px;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--light-background);
+    padding-left: 350px;
+}
+/* When the body section is active set the padding to 0 */
+body.active{
+    padding: 0;
+}
+
+section{
+    padding: 30px;
+    max-width: 32cm;
+    margin: 0 auto;
+}
+
+/* STYLING HEADER SECTION HERE */
+.header{
+    background-color: var(--light-color);
+    border-bottom: var(--border);
+    position: sticky;
+    z-index: 1000;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.header .flex{
+     padding: 20px 16px;
+     display: flex;
+     align-items: center;
+     position: relative;
+     justify-content: space-between;
+}
+
+.header .flex .logo{
+    font-size: 40px;
+    color: var(--black);
+    font-weight: bolder;
+}
+
+.header .flex .search-bar{
+    background-color: var(--light-background);
+    display: flex;
+    border-radius: 8px;
+    padding: 10px 32px;
+    align-items: center;
+    width: 800px;
+    gap: 24px;
+}
+
+.header .flex .search-bar input{
+    background: none;
+    color: var(--black);
+    font-size: 20px;
+    width: 100%;
+}
+
+.header .flex .search-bar button{
+    background:none;
+    color: var(--black);
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.header .flex .search-bar button:hover{
+    color: var(--main-color);
+}
+
+.header .flex .symbols div{
+    color: var(--black);
+    cursor: pointer;
+    background-color: var(--light-background);
+    text-align: center;
+    font-size: 16px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 8px;
+    margin-left: 4px;  
+}
+
+.header .flex .symbols div:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+#search-button {
+    display: none;
+}
+
+/* STYLING HEADER SECTION FOR THE PROFILE HERE */
+.user-profile{
+    transform: scale(0);
+    transform-origin: top right;
+    transition: .2s linear;
+    position: absolute;
+    background-color: var(--white);
+    text-align: center;
+    top: 130%;
+    padding: 30px;
+    width: 300px;
+    left: 85%;
+    border-radius:60px;
+}
+.user-profile.active{
+    transform: scale(1);
+} 
+
+.user-profile img{
+    height: 140px;
+    object-fit: cover;
+    margin-bottom: 8px;
+    width: 100px; 
+    border-radius: 30px;
+}
+
+.user-profile h2 {
+    font-size: 32px;
+    color: var(--black);
+}
+
+.user-profile span{
+    color: var(--black);
+    font-size: 20px;
+}
+
+/* CUSTOMISING THE BUTTONS */
+.profile-button{
+    display: block;
+    color: var(--white);
+    background-color: var(--main-color);
+    cursor: pointer;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 8px;
+    padding: 16px 48px;
+    width: 100%;
+    text-transform: uppercase;
+    margin-top: 16px;
+}
+.user-button{
+    display: block;
+    color: var(--white);
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 8px;
+    width: 50%;
+    text-transform: uppercase;
+    margin-top: 16px;
+    display: flex;
+    gap: 25px;
+}
+.sign-button {
+    display: block;
+    color: var(--white);
+    background-color: var(--red);
+    cursor: pointer;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 20px;
+    padding: 18px 20px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.profile-button:hover,
+.sign-button:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* *CUSTOMISING DASHBOARD OPTION  */
+
+
+
+.dashboard-options{
+    background-color: #444;
+    border-right: var(--border);
+    position: fixed;
+    width: 350px;
+    height: 1300px;
+    top: 0;
+    left: 0;
+    transition: .4s ease-out;
+    z-index: 1000;
+}
+
+/* CUSTOMISING USER PROFILE IN DASHBOARD OPTIONS */
+ 
+.dashboard-options .user-profile1{
+    padding: 48px 36px;
+    text-align: center;
+}
+
+.dashboard-options .user-profile1 img{
+    border-radius: 60%;
+    object-fit: fill;
+    margin-bottom: 8px;
+    height: 150px;
+    width: 150px;
+}
+
+.dashboard-options .user-profile1 h2{
+    font-size: 32px;
+    color: var(--white);
+}
+
+.dashboard-options .user-profile1 span{
+    color: var(--red);
+    font-size: 20px;
+}
+
+/* CUSTOMISING DASHBOARD CHOOSES FOR THE USER  */
+
+.dashboard-options .options a{
+    display: block;
+    padding: 30px;
+    font-size: 20px;
+    margin: 1px 0;
+}
+
+.dashboard-options .options a i{
+    font-size: 30px;
+    transition: .3s ease-in;
+    color: var(--main-color);
+    margin-right: 46px;
+}
+
+.dashboard-options .options a span{
+    color: var(--light-color);
+}
+
+.dashboard-options .options a:hover{
+    background-color: var(--light-background);
+}
+
+.dashboard-options .options a:hover i{
+    margin-right: 40px;
+}
+
+/* When the dashboard options page is active */
+.dashboard-options.active{
+    left: -500px;
+}
+
+
+
+/* CUSTOMISING THE FOOTER SECTION */
+
+.footer{
+    background-color: var(--white);
+    border-top: var(--border);
+    color: var(--black);
+    text-align: center;
+    position: sticky;
+    font-size: 20px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 42px 32px;
+    margin-top: 1000px;
+    z-index:  999;
+}
+
+.footer span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+
+/* ADMIN ( INSERT VIDEOS TO THE DATABASE USING THE ADMIN FORM ) */
+.heading {
+    font-size: 30px;
+    color: #284B63;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 10px 0;
+    background-color: #E3F2FD; 
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    max-width: 100%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    border-left: 5px solid #1976D2;
+}
+
+.add-videos{
+    align-items: center;
+    justify-content:center;
+    display: flex;
+    padding: 30px;
+    min-height: 750px;
+}
+
+.add-videos form{
+    width: 7000px;
+    background-color: var(--white);
+    text-align: center;
+    padding: 32px;
+    border-radius: 10px;
+
+}
+
+.add-videos form .flex{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    flex-wrap:wrap;
+}
+
+.add-videos form .flex .inputs{
+    width: 49%;
+}
+
+.add-videos form .flex .inputs span{
+    font-size: 20px;
+    display: block;
+    color: var(--main-color);
+    padding-top: 20px;
+    padding-bottom: 18px;
+}
+
+.add-videos form .flex .inputs .input-box{
+    color: var(--black);
+    width: 100%;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 19px 22px;
+    background-color: #e9e9e9;
+}
+
+.add-videos .flex .button{
+    display: block;
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1px solid #D8000C;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 8px;
+    width: 100%;
+    text-transform: uppercase;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    height: 55px;
+}
+
+.add-videos .flex .button:hover {
+    background-color: rgba(255, 0, 0, 0.455);
+}
+
+.error-message {
+    color: var(--red); 
+    background-color: #FFD2D2;
+    border: 1px solid var(--red); 
+    border-radius: 5px;
+    padding: 10px; 
+    margin: 10px 0;
+    text-align: center;
+    font-size: 16px; 
+}
+
+/* DISPLAY ALL THE COURSES SECTION */
+
+.all-courses .courses-area {
+    justify-content: center;
+    gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+    align-items: flex-start; /* Aligns flex items along the cross axis of the current line of the flex container. */
+    display:grid;
+}
+
+.all-courses .courses-area .course{
+    background-color: var(--white);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 4px  8px -2px;
+    transition: all 0.3s ease-in-out;
+    padding: 32px;
+    border-radius: 8px;
+}
+
+.all-courses .courses-area .course h2{
+    list-style:inside;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    margin-top: 18px;
+    padding: 5px 0;
+}
+
+.courses-header{
+    font-size: 32px;
+    color: #284B63;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 10px 0;
+    background-color: #E3F2FD;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.all-courses .courses-area .courses img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.all-courses .courses-area .course .button {
+    display: inline-block;
+    background-color: var(--main-color);
+    color: var(--white);
+    text-align: center;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold; 
+    transition: background-color 1s;
+    font-size: 16px; /* Font size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+}
+
+.all-courses .courses-area .course .button:hover, .course .button:focus {
+    background-color: var(--main-color1);
+    color: var(--white);
+    transform: translateY(-2px); /* Slight lift effect */
+    text-decoration: none;
+}
+
+.all-courses .courses-area .course .button:active {
+    transform: translateY(1px); /* Press down effect */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+/* HTML - CSS COURSE DESIGN HERE */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effects */
+}
+
+/* Enhance interactivity with hover effects */
+li:hover {
+    transform: translateY(-5px); /* Slightly raise the item */
+    box-shadow: 0 4px 8px var(--shadow-color); 
+}
+
+li h3 {
+    color: var(--main-color);
+    text-transform: capitalize;
+    font-size: 24px;
+    font-family: var(--font-secondary); /* Use a more formal font for titles */
+    margin: 15px 0;
+}
+
+li p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+iframe {
+    width: 100%; /* Make iframe responsive */
+    max-width: 560px;
+    height: 315px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Customising add user form here for admin*/
+
+.register-form{
+    background: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 750px;
+    padding: 24px;
+    padding-bottom: 58px;
+}
+
+.register-form form{
+    background: var(--light-color);
+    text-align: center;
+    padding: 24px;
+    border-radius: 10px;
+    width: 650px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+.register-form form h1{
+    color: var(--main-color);
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.register-form form input{
+    background: var(--white);
+    margin: 6px 0;
+    font-size: 16px;
+    width: 100%;
+    padding: 12px 5px;
+}
+
+.register-form form select{
+    background: var(--white);
+    margin: 6px 0;
+    font-size: 16px;
+    width: 100%;
+    padding: 12px 5px;
+}
+
+.register-form form select option{
+    background: var(--white);
+}
+
+.register-form form .register-button{
+    background: var(--main-color);
+    color: var(--white);
+    font-size: 24px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.register-form form .register-button:hover{
+    background: var(--main-color1);
+    color: var(--white);
+}
+
+.register-form form p{
+    font-size: 18px;
+    color: var(--black);
+    margin-top: 12px;
+}
+
+.register-form form p a{
+    color: var(--main-color1);
+}
+
+/* Designing the list of users  fro admin page*/
+
+
+.table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+.table_header .btn {
+    font-size: 20px; 
+    background-color: var(--main-color1);
+    color: var(--light-color);
+}
+
+.table_header h3{
+    font-size: 20px;
+    display: inline;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+    font-size: 16px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+
+/* THE SECTION WHERE ADMIN UPLOADS VIDEO TO THE COURSE SECTION */
+
+.image_flex {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adjust the space between form elements */
+}
+
+.image_details {
+    display: flex;
+    flex-direction: column;
+}
+
+.image_details span {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.image_input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+    background-color: #e9e9e9;
+}
+
+.image_input:focus {
+    border-color: #007bff; /* Highlight focus */
+    outline: none;
+}
+
+.button {
+    display: block;
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1px solid #D8000C;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 8px;
+    width: 100%;
+    text-transform: uppercase;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    height: 55px;
+}
+
+.button:hover {
+    background-color: rgba(255, 0, 0, 0.455);
+}
+
+
+/* THIS SECTION IS WHEN ADMIN ULPOAD PHOTOS TO THE COURSE  */
+
+.show-images {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.show-images .images {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.show-image {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.show-image img {
+    width: 70%;
+    height: auto; 
+    max-height: 80vh; 
+}
+
+.show-images .show-image .title {
+    font-size: 24px;
+    color: var(--main-color);
+    background-color: var(--white);
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    border: 2px solid var(--main-color);
+    border-radius: 5px; 
+}
+
+.show-images .show-image .description {
+    font-size: 16px;
+    color: var(--black);
+    background-color: var(--white); 
+    overflow-y: auto;
+    height: 100px;
+    text-align: justify;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px; 
+    border-radius: 5px;
+    border: 2px solid var(--black);
+} 
+
+.error-message {
+    text-align: center;
+    color: #D8000C;
+    background-color: #FFD2D2;
+    padding: 12px;
+    margin-top: 30px;
+    border-radius: 8px;
+    font-size: 18px; /* Larger font size for visibility */
+}
+
+
+
+/* THE DESIGN OF THE FORUM IS HERE */
+
+
+.discussion {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.discussion h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.discussion form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.discussion input[type="text"],
+.discussion textarea {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.discussion textarea {
+    height: 100px;
+    resize: none; /* Disable resizing the textarea */
+}
+
+.discussion .submit {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.discussion .submit:hover {
+    background-color: #0056b3;
+}
+
+
+.display_comments {
+    margin-top: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.display_comments p {
+    margin: 5px 0;
+    line-height: 1.5;
+    color: #666;
+}
+
+.display_comments .commenter {
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* DESIGNING USERS QUESTIONS AND ANSWERS */
+
+.comments_reply {
+    margin: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.comments_reply .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.comments_reply .comment {
+    font-size: 16px;
+    color: #666;
+    background-color: #fff;
+    padding: 10px;
+    border-left: 3px solid #007BFF;
+    margin-bottom: 5px;
+}
+
+.comments_reply .date {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.comments_reply .comment_reply {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comments_reply .comment_reply:hover {
+    background-color: #0056b3;
+}
+
+
+.comment_reply_container {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 2px solid #eee;
+}
+
+/* -------------------------------------------------------- */
+/* THE DESIGN OF THE QUIZ STARTS HERE (html_css_course.php) */
+/* -------------------------------------------------------- */
+
+.quiz.headings {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.quiz.headings h2 {
+    color: var(--black);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.quiz.headings p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px; 
+}
+
+.quiz.headings span {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+
+.quiz.headings .start_quiz {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: var(--white); 
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for the start button */
+.quiz.headings .start_quiz:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ------------------------------------------------------- */
+/* THE DESIGN OF THE QUIZ QUESTIONS STARTS HERE (quiz.php) */
+/* ------------------------------------------------------- */
+
+
+.quiz_heading {
+    font-size: 28px;
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px; 
+    background-color: var(--main-color1);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid #007bff;
+    width: 65%;
+    margin-top: 20px;
+}
+
+.question {
+    padding: 20px;
+    background-color: var(--white);
+    border-bottom: 1px solid #ccc;
+    width: 60%;
+    margin-left: 20px;
+}
+
+.current_question {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.question_title {
+    font-size: 20px;
+    color: #495057;
+    margin-bottom: 20px;
+}
+
+.options {
+    list-style-type: none;
+    padding: 0;
+}
+
+.options li {
+    padding: 8px;
+    background-color: var(--white);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    float: center;
+    text-align: left;
+}
+
+.options li:hover {
+    background-color: var(--white);
+}
+
+.options input[type="radio"] {
+    margin-right: 10px;
+}
+
+.option_button{
+    background-color: var(--main-color1);
+    color: var(--white);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option_button:hover {
+    background-color: var(--main-color);
+}
+
+
+/* ------------------------------------------------------------- */
+/* THE DESIGN OF THE QUIZ RESULTS STARTS HERE (quiz_results.php) */
+/* ------------------------------------------------------------- */
+
+
+.quiz_results {
+    background-color: #f8f8f8; 
+    border: 1px solid #ccc; 
+    padding: 20px;
+    border-radius: 8px;
+    width: 65%;
+    text-align: center;
+}
+
+.quiz_results h3 {
+    color: var(--main-color1);
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.quiz_results p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.quiz_results a.start_quiz {
+    font-size: 18px;
+    color: var(--white);
+    background-color: #28a745;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none; 
+    transition: background-color 0.3s ease; 
+}
+
+.quiz_results a.start_quiz:hover {
+    background-color: #218838; 
+}
+
+
+/* -------------------------------------------------------------------- */
+/* THE DESIGN OF THE QUIZ INPUTS FORM THE ADMIN STARTS HERE (admin.php) */
+/* -------------------------------------------------------------------- */
+
+.add-questions {
+    background-color: var(--white);
+    padding: 20px;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.add-questions h3 {
+    text-align: center;
+    color: var(--black); 
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: var(--main-color);
+}
+
+.add-questions .inputs {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: var(--light-gray);
+}
+
+.add-questions .input-box {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    margin-top: 5px;
+    color: var(--black);
+    background-color: var(--light-gray);
+}
+
+.add-questions .inputs span {
+    display: block; 
+    color: var(--main-color);
+    font-size: 18px;
+}
+
+.add-questions form {
+    padding: 20px;
+    background-color: var(--white); 
+    border-radius: 8px;
+}
+
+
+/* ----------------------------------------------------------------------- */
+/* THE DESIGN OF THE ABOUT US PAGE START HERE (about_us.php)  [NOT WORKING]*/ 
+/* ----------------------------------------------------------------------- */
+
+
+.about_us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px;
+    box-sizing: border-box;
+}
+
+.area {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.area img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+h5 {
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1px solid #D8000C;
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 50px;
+    letter-spacing: 4px;
+}
+
+.text h6 {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--main-color1);
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.text p {
+    font-size: 18px;
+    color: var(--black);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    line-height: 2;
+}
+
+
+
+/* ----------------------------------------------------------- */
+/* THE DESIGN OF THE CONTACT US PAGE START HERE (contact_us.php) */ 
+/* ----------------------------------------------------------- */
+
+
+.contact_us {
+    width: 65%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact_us .input {
+    margin-bottom: 30px;
+}
+
+.contact_us .input span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--main-color);
+    font-size: 20px;
+}
+
+.contact_us input[type="text"],
+.contact_us input[type="email"],
+.contact_us textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.contact_us textarea {
+    height: 100px;
+    color: var(--black);
+}
+
+.contact_us input[type="submit"] {
+    font-size: 28px;
+    font-weight: normal;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1px solid #D8000C;
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 50px;
+}
+
+.contact_us input[type="submit"]:hover {
+    background-color: var(--white); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+    .course {
+        width: calc(50% - 20px); /* 2 courses per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .course {
+        width: calc(100% - 20px); /* 1 course per row on small screens */
+    }
+
+    /* Customising the list of users table */
+    .table th,
+    .table td {
+        padding: 6px; 
+        font-size: 14px; 
+    }
+
+    .btn {
+        padding: 4px 8px; 
+        font-size: 12px; 
+    }
+
+    .table_header h3,
+    .table_header .btn {
+        font-size: 16px; /* Slightly smaller font size for headers and buttons */
+    }
+
+}
+
+
+
+/* CHANGE TO DIFFERENT MEDIAS */
+
+    @media (max-width: 1143px) {
+        body{
+            padding-left: 0;
+        }
+        .dashboard-options{
+            left: -500px;
+        }
+        .dashboard-options.active{
+            left: 0;
+        }
+    }
+    @media (max-width: 850px) {
+         
+        .header .flex .search-bar{
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            border-top: var(--border);
+            background-color: var(--white);
+            position:absolute;
+            width: auto;
+            left: 0;
+            right: 0;
+            top: 99%;
+            transition: .5s linear;
+        }
+        #search-button{
+            display: inline-block;
+        }
+        .header .flex .search-bar.active{
+            clip-path: polygon(0 0, 100% 0, 100% 100% , 0 100%);
+        }
+    
+
+    @media (max-width: 460px) {
+        html{
+            font-size: 50%;
+        }
+
+        /* Customising the list of users table in admin page for mobile view*/
+        .table th,
+        .table td {
+            padding: 4px; /* Further reduce padding */
+            font-size: 12px; /* Further reduce font size for table content */
+        }
+    
+        .btn {
+            padding: 2px 4px; /* Even smaller buttons */
+            font-size: 10px; /* Even smaller text on buttons */
+        }
+    
+        .table_header h3,
+        .table_header .btn {
+            font-size: 14px; /* Adjust font size for very small screens */
+        }
+    
+        .float-end {
+            float: none;
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+        }
+    }
+    }
+
+    
